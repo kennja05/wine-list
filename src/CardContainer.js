@@ -12,6 +12,10 @@ export default class CardContainer extends React.Component {
                 <Card />
                 <Card />
                 <Card />
+                <Card />
+                <Card />
+                <Card />
+
             </div>
         )
     }

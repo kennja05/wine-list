@@ -17,7 +17,7 @@ export default class Card extends React.Component {
     render(){
         const {showFront} = this.state
         return(
-            <div onClick={this.flipCard}>                
+            <div className='card' onClick={this.flipCard}>                
                 {showFront && <CardFront />}
                 {!showFront && <CardBack />}
             </div>

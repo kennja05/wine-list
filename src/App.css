@@ -4,5 +4,12 @@
 
 #card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+}
+
+.card {
+  border: 1px solid black;
+  margin: 2%;
+  border-radius: 2%;
 }
