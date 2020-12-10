@@ -17,9 +17,9 @@ export default class CardContainer extends React.Component {
     render(){
         // console.log(this.state.wines)
         return(
-            <div id='card-container'>
-                <ul>
-                    {this.state.wines.map((wine, i) => <li key={i}><Card {...wine}/></li>)}
+            <div className='card-container'>
+                <ul className='card-container__list'>
+                    {this.state.wines.map((wine) => <Card key={wine.id} {...wine}/>)}
                 </ul>
             </div>
         )

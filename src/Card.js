@@ -18,10 +18,12 @@ export default class Card extends React.Component {
         const {showFront} = this.state
         console.log(this.props)
         return(
-            <div className='card' onClick={this.flipCard}>                
-                {showFront && <CardFront />}
-                {!showFront && <CardBack />}
-            </div>
+            <li className='card' onClick={this.flipCard}>
+                <div>                
+                    {showFront && <CardFront />}
+                    {!showFront && <CardBack />}
+                </div>
+            </li>
         )
     }
 

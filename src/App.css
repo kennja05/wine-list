@@ -16,14 +16,18 @@ body {
   padding: 2rem;
 }
 
-#card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.card-container {
+  text-align: center;
+}
 
+.card-container__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 35rem 35rem 35rem;
 }
 
 .card {
   border: 1px solid black;
   margin: 2%;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
