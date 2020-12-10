@@ -27,7 +27,33 @@ body {
 }
 
 .card {
-  border: 1px solid black;
   margin: 2%;
   border-radius: 1rem;
+}
+
+.card--back,
+.card--front
+  {
+  animation: fadeIn .5s ease-in;
+  border: 1px solid black;
+  border-radius: 1rem;
+  min-height: 15rem;
+  box-shadow: 5px 5px 5px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    opacity: 1.0;
+    transform: rotateY(360deg);
+  }
 }
