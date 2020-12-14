@@ -16,11 +16,11 @@ export default class Card extends React.Component {
 
     render(){
         const {showFront} = this.state
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <li className='card' onClick={this.flipCard}>
                 <div>                
-                    {showFront && <CardFront />}
+                    {showFront && <CardFront {...this.props}/>}
                     {!showFront && <CardBack />}
                 </div>
             </li>

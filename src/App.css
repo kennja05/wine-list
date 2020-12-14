@@ -14,6 +14,10 @@ body {
   line-height: 1.7;
   box-sizing: border-box;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#722f37, #924678);
 }
 
 .card-container {
@@ -38,7 +42,10 @@ body {
   border: 1px solid black;
   border-radius: 1rem;
   min-height: 15rem;
-  box-shadow: 5px 5px 5px;
+  box-shadow: .1rem .1rem .4rem #333;
+  /* transform: rotateY(180deg) */
+  backface-visibility: hidden;
+  transition: all .2s;
 }
 
 @keyframes fadeIn {
@@ -48,12 +55,13 @@ body {
   }
 
   50% {
-    opacity: 0.5;
-    transform: rotateY(180deg);
+    /* opacity: 0.5; */
+    transform: rotateY(90deg);
   }
 
   100% {
     opacity: 1.0;
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
   }
+
 }
