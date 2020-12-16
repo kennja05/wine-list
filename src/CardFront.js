@@ -2,7 +2,7 @@ const CardFront = (props) => {
     console.log(props.purchase_date)
     const {winery, varietal, rating, purchase_date} = props
     return(
-        <div className='card--front'>
+        <div className='card-front'>
             <p>{winery}</p>
             <p>{varietal}</p>
             <p>{formattedDate(purchase_date)}</p>

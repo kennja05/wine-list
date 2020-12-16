@@ -8,21 +8,23 @@ export default class Card extends React.Component {
         showFront: true
     }
 
-    flipCard = () => {
-        this.setState({
-            showFront: !this.state.showFront
-        })
-    }
+    // flipCard = () => {
+    //     this.setState({
+    //         showFront: !this.state.showFront
+    //     })
+    // }
 
     render(){
-        const {showFront} = this.state
+        // const {showFront} = this.state
         // console.log(this.props)
         return(
-            <li className='card' onClick={this.flipCard}>
-                <div>                
-                    {showFront && <CardFront {...this.props}/>}
-                    {!showFront && <CardBack />}
-                </div>
+            <li>
+                <div className='card'>
+                    <div className='card-inner'>                
+                        <CardFront {...this.props}/>
+                        <CardBack />
+                    </div>
+                </div>  
             </li>
         )
     }
