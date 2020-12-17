@@ -29,7 +29,7 @@ function formattedRating(int){
     for (let i = 0; i < int; i++){
         res += star
     }
-    return `${res}(${int}/10)`
+    return <><span className='rating'>{res}</span><span className='rating rating-numerical'>({int}/10)</span></>
 }
 
 export default CardFront

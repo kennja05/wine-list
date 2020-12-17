@@ -1,8 +1,8 @@
 const CardBack = (props) => {
     return(
         <div className='card-back'>
-            <p>
-                Reviewwwww
+            <p className='review'>
+                {props.review}
             </p>
         </div>
     )
