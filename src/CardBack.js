@@ -1,9 +1,11 @@
 const CardBack = (props) => {
     return(
         <div className='card-back'>
-            <p className='review'>
+            <div className='card__content'>
+                {props.winery}
+                {props.varietal}
                 {props.review}
-            </p>
+            </div>
         </div>
     )
 }
