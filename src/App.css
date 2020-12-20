@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(#722f37, #8c565c);
+  background: linear-gradient(#f24c62, #d96f7e);
 }
 
 .card-container {
@@ -67,8 +67,8 @@ body {
 
 /* Style the front side (fallback if image is missing) */
 .card-front {
-  background-color: #bbb;
-  color: black;
+  background-color: #005070;
+  color: #f7f6f6;
   font-size: 2.3rem;
   box-shadow: .5rem .5rem 1rem #333;
   
@@ -76,10 +76,11 @@ body {
 
 /* Style the back side */
 .card-back {
-  background-color: #2f3f72;
-  color: white;
+  background-color: #49c6dd;
+  color: #005070;
   transform: rotateY(180deg);
-  box-shadow: .5rem .5rem 1rem #000;
+  box-shadow: .5rem .5rem 1rem #434344;
+  font-size: 1.2rem;
 }
 
 .card__content {
