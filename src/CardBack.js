@@ -7,7 +7,7 @@ const CardBack = (props) => {
                 <p>{winery} | {varietal}</p>
                 <p>{review}</p>
                 <p>Purchased On: {formattedDate(purchase_date)}</p>
-                <p>price: ${price}</p>
+                <p>Price: ${price}</p>
             </div>
         </div>
     )
