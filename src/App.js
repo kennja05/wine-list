@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react'
 import CardContainer from './CardContainer'
-
 class App extends React.Component {
   
   state = {
