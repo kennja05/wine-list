@@ -14,8 +14,11 @@ export default class AddWineFormContainer extends React.Component {
     }
 
     render(){
+        const {showFront} = this.state
         return(
-            <div className='card'></div>
+            <div className='card'>
+                {this.state.showFront ? <AddWineFront /> : <AddWineBack />}
+            </div>
         )
     }
 
