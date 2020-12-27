@@ -96,9 +96,17 @@ body {
 
 #add-wine-form {
   background-color: #005070;
+  line-height: 1.3rem;
 }
 
 #add-wine-form:hover {
   box-shadow: .5rem .5rem 1rem #000;
-  cursor: pointer;
+}
+
+#add-wine-form label {
+  margin-right: 1rem;
+}
+
+#add-wine-form p {
+  line-height: 2.6;
 }
