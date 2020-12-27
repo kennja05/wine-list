@@ -1,6 +1,12 @@
 const AddWineFront = props => {
     return(
-        <div className='add-wine-form add-wine-front'>Wine Form Front</div>
+        <div id='add-wine-form'>
+            <form>
+                <input type='text' placeholder='Winery'/>
+                <input type='text' placeholder='Varietal' />
+                <input type='number' placeholder='0' />
+            </form>
+        </div>
     )
 }
 

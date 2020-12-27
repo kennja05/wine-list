@@ -56,13 +56,14 @@ body {
 }
 
 /* Position the front and back side */
-.card-front, .card-back {
+.card-front, .card-back, #add-wine-form {
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
   border-radius: 1rem;
+  box-shadow: .5rem .5rem 1rem #333;
 }
 
 /* Style the front side (fallback if image is missing) */
@@ -70,7 +71,6 @@ body {
   background-color: #005070;
   color: #f7f6f6;
   font-size: 2.3rem;
-  box-shadow: .5rem .5rem 1rem #333;
   
 }
 
@@ -79,7 +79,6 @@ body {
   background-color: #49c6dd;
   color: #005070;
   transform: rotateY(180deg);
-  box-shadow: .5rem .5rem 1rem #434344;
   font-size: 1.2rem;
 }
 
@@ -95,3 +94,11 @@ body {
   font-size: 1rem;
 }
 
+#add-wine-form {
+  background-color: #005070;
+}
+
+#add-wine-form:hover {
+  box-shadow: .5rem .5rem 1rem #000;
+  cursor: pointer;
+}
