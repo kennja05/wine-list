@@ -11,6 +11,11 @@ export default class AddWineFormContainer extends React.Component {
         purchasedOn: '',
     }
 
+    submitForm(){
+        const {addWine} = this.props
+        console.log('Added wine')
+    }
+
     render(){
         return(
             <div className='card'>

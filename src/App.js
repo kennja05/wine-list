@@ -7,6 +7,13 @@ class App extends React.Component {
     wines: []
   }
 
+  addWine(wine){
+    const {wines} = this.state
+    this.setState({
+      wines: [...wines, wine]
+    })
+  }
+
   componentDidMount(){
     fetch('http://localhost:3000/wines')
         .then(res => res.json())
@@ -18,7 +25,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <CardContainer wines={this.state.wines}/>
+        <CardContainer addWine={this.addWine} wines={this.state.wines}/>
       </div>
     );
   }
