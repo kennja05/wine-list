@@ -1,6 +1,5 @@
 const CardBack = (props) => {
     const {winery, varietal, review, purchase_date, price} = props
-    console.log(props)
     return(
         <div className='card-back'>
             <div className='card__content'>

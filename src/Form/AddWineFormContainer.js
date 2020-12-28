@@ -11,17 +11,19 @@ export default class AddWineFormContainer extends React.Component {
     }
 
     submitForm(){
-        const {addWine} = this.props
+        // const {addWine} = this.props
         console.log('Added wine')
     }
 
     handleChange(e){
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        console.log(e.target.value)
+        // this.setState({
+        //     [e.target.name]: e.target.value
+        // })
     }
 
     render(){
+        console.log(this.state.winery)
         return(
             <div className='card'>
                 <AddWineFront {...this.state} handleChange={this.handleChange}/>
