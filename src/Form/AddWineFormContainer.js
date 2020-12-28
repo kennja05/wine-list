@@ -8,7 +8,6 @@ export default class AddWineFormContainer extends React.Component {
         varietal: '',
         price: 0,
         review: '',
-        purchasedOn: '',
     }
 
     submitForm(){
@@ -16,10 +15,16 @@ export default class AddWineFormContainer extends React.Component {
         console.log('Added wine')
     }
 
+    handleChange(e){
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     render(){
         return(
             <div className='card'>
-                <AddWineFront />
+                <AddWineFront {...this.state} handleChange={this.handleChange}/>
             </div>
         )
     }

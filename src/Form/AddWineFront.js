@@ -1,24 +1,24 @@
 const AddWineFront = props => {
-    console.log(props)
+    const {handleChange, winery, varietal, price, review} = props
     return(
         <div id='add-wine-form'>
             <p>Add a New Wine!</p>
             <form>
                 <p>
                     <label>Winery</label>
-                    <input id='winery' type='text' placeholder='Winery'/>
+                    <input onChange={handleChange} value={winery} name='winery' type='text' placeholder='Winery'/>
                 </p>
                 <p>
                     <label>Varietal</label>
-                    <input id='varietal' type='text' placeholder='Varietal' />
+                    <input onChange={handleChange} value={varietal} name='varietal' type='text' placeholder='Varietal' />
                 </p>
                 <p>
-                    <label>Cost</label>
-                    <input id='cost' type='number' placeholder='0' />
+                    <label>Purchase Price</label>
+                    <input onChange={handleChange} value={price} name='price' type='number' placeholder='0' />
                 </p>
                 <p>
                     <label for='review'>Review</label>
-                    <textarea id='review' type='textbox' /> 
+                    <textarea onChange={handleChange} value={review} name='review' type='textbox' /> 
                 </p>
             </form>
         </div>
