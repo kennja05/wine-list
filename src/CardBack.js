@@ -1,12 +1,14 @@
 const CardBack = (props) => {
-    const {winery, varietal, review, purchase_date, price} = props
+    //using updated_at timestamp to allow for future updates
+    //without
+    const {winery, varietal, review, updated_at, price} = props
     return(
         <div className='card-back'>
             <div className='card__content'>
                 <p>{winery} | {varietal}</p>
                 <p>{review}</p>
-                <p>Purchased On: {formattedDate(purchase_date)}</p>
                 <p>Price: ${price}</p>
+                <p>Reviewed On: {formattedDate(updated_at)}</p>
             </div>
         </div>
     )
