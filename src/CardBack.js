@@ -5,7 +5,7 @@ const CardBack = (props) => {
     return(
         <div className='card-back'>
             <div className='card__content'>
-                <p>{winery} | {varietal}</p>
+                <p>{winery} | {varietal.name}</p>
                 <p>{review}</p>
                 <p>Price: ${price}</p>
                 <p>Reviewed On: {formattedDate(updated_at)}</p>

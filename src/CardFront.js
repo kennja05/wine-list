@@ -1,10 +1,11 @@
 const CardFront = (props) => {
+    console.log(props)
     const {winery, varietal, rating} = props
     return(
         <div className='card-front'>
             <div className='card__content'>
             <p>{winery}</p>
-            <p>{varietal}</p>
+            <p>{varietal.name}</p>
             {/* TODO: wine-searcher api for average cost
             <p>AverageCost</p> */}
             <p>{formattedRating(rating)}</p>

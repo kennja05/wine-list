@@ -10,8 +10,19 @@ const AddWineFront = props => {
                 </p>
                 <p>
                     <label>Varietal</label>
-                    <input onChange={handleChange} value={varietal} name='varietal' type='text' placeholder='Varietal' />
+                    {/* <select name='varietal' value={varietal}>
+                        <optgroup label='Red Wines'>
+                            <option value='Merlot'>Merlot</option>
+                        </optgroup>
+                        <optgroup label='White Wines'>
+                            <option value='Chardonnay'>Chardonnay</option>
+                        </optgroup>
+                    </select> */}
                 </p>
+                {/* <p>
+                    <label>Varietal</label>
+                    <input onChange={handleChange} value={varietal} name='varietal' type='text' placeholder='Varietal' />
+                </p> */}
                 <p>
                     <label>Purchase Price</label>
                     <input onChange={handleChange} value={price} name='price' type='number' placeholder='0' />
@@ -19,7 +30,7 @@ const AddWineFront = props => {
                 <p>
                     <label>Review</label>
                     <textarea onChange={handleChange} value={review} name='review' type='textbox' /> 
-                    <span>{review.length} / 150</span>
+                    <span>{review.length} / 75</span>
                 </p>
             </form>
         </div>

@@ -8,6 +8,13 @@ export default class AddWineFormContainer extends React.Component {
         varietal: '',
         price: 0,
         review: '',
+        varietals: []
+    }
+
+    componentDidMount(){
+        fetch('http://localhost:3000/varietals')
+            .then(res => res.json())
+            .then(data => console.log(data))
     }
 
     submitForm = () => {
