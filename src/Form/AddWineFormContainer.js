@@ -6,7 +6,7 @@ export default class AddWineFormContainer extends React.Component {
     state = {
         winery: '',
         varietal: '',
-        price: 0,
+        price: '',
         review: '',
         varietals: []
     }
@@ -16,26 +16,34 @@ export default class AddWineFormContainer extends React.Component {
             .then(res => res.json())
             .then(varietalList => this.setState({
                 varietals: varietalList
-            }))
-    }
+            }));
+    };
 
-    submitForm = () => {
-        // const {addWine} = this.props
+    submitForm = (e) => {
+        e.preventDefault()
+        const {winery, varietal, price, review} = this.state;
         console.log('Added wine')
+        this.setState({
+            winery: '',
+            varietal: '',
+            price: '',
+            reivew: ''
+        });
     }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-        })
-    }
+        });
+    };
 
     render(){
+        console.log(this.state.varietal)
         return(
             <div className='card'>
                 <AddWineFront {...this.state} handleChange={this.handleChange}/>
             </div>
-        )
-    }
+        );
+    };
 
-}
+};

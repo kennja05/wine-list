@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react'
 import CardContainer from './CardContainer'
+
 class App extends React.Component {
   
   state = {
@@ -10,7 +11,7 @@ class App extends React.Component {
   addWine(wine){
     const {wines} = this.state
     this.setState({
-      wines: [...wines, wine]
+      wines: [wine, ...wines]
     })
   }
 
@@ -19,7 +20,7 @@ class App extends React.Component {
         .then(res => res.json())
         .then(wineList => this.setState({
             wines: wineList
-        }))
+    }))
 }
 
   render(){

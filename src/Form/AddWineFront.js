@@ -1,6 +1,6 @@
 const AddWineFront = props => {
-    const {handleChange, winery, varietals, price, review} = props
-    console.log(varietals)
+    console.log(props)
+    const {handleChange, winery, varietal, varietals, price, review} = props
     return(
         <div id='add-wine-form'>
             <form>
@@ -10,19 +10,18 @@ const AddWineFront = props => {
                 </p>
                 <p>
                     <label>Varietal</label>
-                    <input type='text' list='varietals' />
+                    <input onChange={handleChange} value={varietal} type='text' list='varietals' placeholder='Varietal'/>
                     <datalist id='varietals'>
-                        {/* {varietals.sort((a,b) => a.color[0] - b.color[0]).map((varietal,i) => <option key={i}>{varietal.name}</option>)} */}
-                        {sortVarietals(varietals)}
+                        {listVarietals(varietals)}
                     </datalist>
                 </p>
                 <p>
-                    <label>Purchase Price</label>
-                    <input onChange={handleChange} value={price} name='price' type='number'/>
+                    <label>Purchase Price ($)</label>
+                    <input onChange={handleChange} value={price} name='price' type='number' placeholder='Purchase Price ($)'/>
                 </p>
                 <p>
                     <label>Review<span> ({review.length}/75)</span></label>
-                    <textarea onChange={handleChange} value={review} name='review' type='textbox' /> 
+                    <textarea onChange={handleChange} value={review} name='review' type='textbox' placeholder='Review'/> 
                 </p>
                 <div href='#'>Add Wine</div>
             </form>
@@ -30,8 +29,8 @@ const AddWineFront = props => {
     )
 }
 
-function sortVarietals(varietalsArray){
-    return varietalsArray.sort((a, b) => a.color - b.color).map((x, i) => <option key={i}>{x.name}</option>)
+function listVarietals(varietalsArray){ 
+    return varietalsArray.map((x, i) => <option key={i}>{x.name}</option>)
 }
 
 export default AddWineFront
