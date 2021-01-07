@@ -14,7 +14,9 @@ export default class AddWineFormContainer extends React.Component {
     componentDidMount(){
         fetch('http://localhost:3000/varietals')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(varietalList => this.setState({
+                varietals: varietalList
+            }))
     }
 
     submitForm = () => {
@@ -29,7 +31,6 @@ export default class AddWineFormContainer extends React.Component {
     }
 
     render(){
-        console.log(this.state.review.length)
         return(
             <div className='card'>
                 <AddWineFront {...this.state} handleChange={this.handleChange}/>

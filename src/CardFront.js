@@ -1,5 +1,4 @@
 const CardFront = (props) => {
-    console.log(props)
     const {winery, varietal, rating} = props
     return(
         <div className='card-front'>

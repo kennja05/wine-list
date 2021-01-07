@@ -1,5 +1,6 @@
 const AddWineFront = props => {
-    const {handleChange, winery, varietal, price, review} = props
+    const {handleChange, winery, varietals, price, review} = props
+    console.log(varietals)
     return(
         <div id='add-wine-form'>
             <p>Add a New Wine!</p>
