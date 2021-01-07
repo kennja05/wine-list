@@ -96,6 +96,7 @@ body {
 
 #add-wine-form {
   background-color: #005070;
+  color: white;
   line-height: 1.3rem;
 }
 
@@ -105,8 +106,29 @@ body {
 
 #add-wine-form label {
   margin-right: 1rem;
+  display: block;
 }
 
-#add-wine-form p {
-  line-height: 2.6;
+#add-wine-form div {
+  text-decoration: none;
+  color: inherit;
+  border: .2rem solid;
+  display: inline-block;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .5rem;
+  transition: ease-out .4s;
+  width: 10rem;
+}
+
+#add-wine-form div:hover {
+  box-shadow: inset 10rem 0 0 0 #49c6dd;
+  color: #005070;
+  border-color: #fff;
+  cursor: pointer;
+}
+
+input, textarea {
+  margin-bottom: 0.7rem;
+  width: 90%;
 }
