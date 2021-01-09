@@ -8,6 +8,7 @@ export default class AddWineFormContainer extends React.Component {
         varietal: '',
         price: '',
         review: '',
+        rating: '',
         varietals: []
     }
 
@@ -22,7 +23,16 @@ export default class AddWineFormContainer extends React.Component {
     submitForm = (e) => {
         e.preventDefault()
         const {winery, varietal, price, review} = this.state;
-        console.log('Added wine')
+        const wine = {winery, varietal, price, review}
+        fetch('http://localhost:3000/wines',{
+            method: "POST",
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(wine)
+          })
+          .then(resp => resp.json())
+          .then(wine => this.props.addWine(wine))
         this.setState({
             winery: '',
             varietal: '',
@@ -41,7 +51,7 @@ export default class AddWineFormContainer extends React.Component {
         console.log(this.state.varietal)
         return(
             <div className='card'>
-                <AddWineFront {...this.state} handleChange={this.handleChange}/>
+                <AddWineFront {...this.state} handleChange={this.handleChange} handleSubmit={this.submitForm}/>
             </div>
         );
     };

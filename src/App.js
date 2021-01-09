@@ -8,7 +8,7 @@ class App extends React.Component {
     wines: []
   }
 
-  addWine(wine){
+  addWine = wine => {
     const {wines} = this.state
     this.setState({
       wines: [wine, ...wines]
