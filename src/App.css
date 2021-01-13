@@ -9,9 +9,7 @@ html {
 }
 
 body {
-  /* font-family: 'Work Sans', sans-serif; */
   font-family: 'Patua One', cursive;
-
   font-weight: 400;
   line-height: 1.7;
   box-sizing: border-box;
@@ -26,10 +24,33 @@ body {
   text-align: center;
 }
 
+@media (min-width: 480px){
+  .card-container__list {
+    grid-template-columns:  35rem;
+  }
+}
+
+@media (min-width: 800px){
+  .card-container__list {
+    grid-template-columns: 35rem 35rem;
+  }
+}
+/* @media (max-width: 768px){
+  .card-container__list {
+    grid-template-columns: 35rem 35rem;
+  }
+} */
+
+@media (min-width: 1000px) {
+  .card-container__list {
+    grid-template-columns: 35rem 35rem 35rem;
+  }
+} 
+
 .card-container__list {
   list-style: none;
   display: grid;
-  grid-template-columns: 35rem 35rem 35rem;
+  /* grid-template-columns: 35rem 35rem 35rem; */
 }
 
 .card {
@@ -116,7 +137,7 @@ body {
   padding-left: .5rem;
   padding-right: .5rem;
   border-radius: .5rem;
-  transition: ease-out .4s;
+  transition: ease-out .2s;
   width: 10rem;
   background-color: #49c6dd;
   font-size: 1.2rem;
@@ -125,7 +146,7 @@ body {
 
 #add-wine-form div:hover {
   box-shadow: inset 10rem 0 0 0 #fff;
-  /* border-color: #fff; */
+  color: #002e42;
   cursor: pointer;
 }
 
@@ -150,7 +171,7 @@ body {
 input, textarea {
   margin-bottom: 0.7rem;
   width: 90%;
-  transition: ease-out .1s;
+  /* transition: ease-out .1s; */
   color: #002e42;
 
 }
