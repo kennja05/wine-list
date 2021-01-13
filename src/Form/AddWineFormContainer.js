@@ -42,49 +42,62 @@ export default class AddWineFormContainer extends React.Component {
     }
 
     handleChange = (e) => {
-        if (e.target.name === 'review'){
-           this.handleReviewChange(e)
-        } else if (e.target.name === 'winery' || e.target.name === 'varietal'){
-            this.handleWineryVarietalChange(e)
-        } else if (e.target.name === 'price' || e.target.name === 'rating') {
-            this.handlePriceRatingChange(e)
+        const name = e.target.name;
+        switch (name){
+            case 'review' : 
+                this.handleReviewChange(e)
+                break;
+            case 'winery' : 
+            case 'varietal' :
+                this.handleWineryVarietalChange(e)
+                break;
+            case 'price':
+            case 'rating':
+                this.handlePriceRatingChange(e)
+                break;
+            default :
+                break;
         };
     };
 
     handleReviewChange = (e) => {
-        if (e.target.value.length <= 75){
+        const value = e.target.value
+        if (value.length <= 75){
             this.setState({
-                review: e.target.value
+                review: value
             })
         }
     }
 
     handleWineryVarietalChange = e => {
-        if (e.target.value.length <= 25){
+        const name = e.target.name
+        const value = e.target.value
+        if (value.length <= 25){
             this.setState({
-                [e.target.name]: e.target.value
+                [name]: value
             })
         }
     }
 
     handlePriceRatingChange = e => {
-        if (e.target.name === 'rating'){
-            if (e.target.value >= 0 && e.target.value <= 10) {
+        const name = e.target.name
+        const value = e.target.value
+        if (name === 'rating'){
+            if (value >= 0 && value <= 10) {
                 this.setState({
-                    rating: e.target.value
+                    rating: value
                 })
             }
         } else {
-            if (e.target.value >= 0){
+            if (value >= 0){
                 this.setState({
-                    price: e.target.value
+                    price: value
                 })
             }
         }
     }
 
     render(){
-        console.log(this.state.varietal)
         return(
             <div className='card'>
                 <AddWineFront {...this.state} handleChange={this.handleChange} handleSubmit={this.submitForm}/>
