@@ -42,10 +42,46 @@ export default class AddWineFormContainer extends React.Component {
     }
 
     handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+        if (e.target.name === 'review'){
+           this.handleReviewChange(e)
+        } else if (e.target.name === 'winery' || e.target.name === 'varietal'){
+            this.handleWineryVarietalChange(e)
+        } else if (e.target.name === 'price' || e.target.name === 'rating') {
+            this.handlePriceRatingChange(e)
+        };
     };
+
+    handleReviewChange = (e) => {
+        if (e.target.value.length <= 75){
+            this.setState({
+                review: e.target.value
+            })
+        }
+    }
+
+    handleWineryVarietalChange = e => {
+        if (e.target.value.length <= 25){
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        }
+    }
+
+    handlePriceRatingChange = e => {
+        if (e.target.name === 'rating'){
+            if (e.target.value >= 0 && e.target.value <= 10) {
+                this.setState({
+                    rating: e.target.value
+                })
+            }
+        } else {
+            if (e.target.value >= 0){
+                this.setState({
+                    price: e.target.value
+                })
+            }
+        }
+    }
 
     render(){
         console.log(this.state.varietal)

@@ -24,34 +24,28 @@ body {
   text-align: center;
 }
 
-@media (min-width: 480px){
+.card-container__list {
+  list-style: none;
+  display: grid;
+}
+
+@media (min-width: 370px){
   .card-container__list {
     grid-template-columns:  35rem;
   }
 }
 
-@media (min-width: 800px){
+@media (min-width: 750px){
   .card-container__list {
     grid-template-columns: 35rem 35rem;
   }
 }
-/* @media (max-width: 768px){
-  .card-container__list {
-    grid-template-columns: 35rem 35rem;
-  }
-} */
 
 @media (min-width: 1000px) {
   .card-container__list {
     grid-template-columns: 35rem 35rem 35rem;
   }
 } 
-
-.card-container__list {
-  list-style: none;
-  display: grid;
-  /* grid-template-columns: 35rem 35rem 35rem; */
-}
 
 .card {
   background-color: transparent;
