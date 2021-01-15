@@ -22,23 +22,30 @@ export default class AddWineFormContainer extends React.Component {
 
     submitForm = (e) => {
         e.preventDefault()
-        const {winery, varietal, price, review} = this.state;
-        const wine = {winery, varietal, price, review}
-        fetch('http://localhost:3000/wines',{
-            method: "POST",
-            headers: {
-              'content-type': 'application/json'
-            },
-            body: JSON.stringify(wine)
-          })
-          .then(resp => resp.json())
-          .then(wine => this.props.addWine(wine))
-        this.setState({
-            winery: '',
-            varietal: '',
-            price: '',
-            reivew: ''
-        });
+        const {winery, varietal, price, review, rating} = this.state;
+        const wine = {winery, varietal, price, review, rating}
+        let expensiveWine = true;
+        if (price > 100){
+            expensiveWine = window.confirm(`${price}$ for a bottle of wine?! Press "OK" or the enter key to confirm that price!`)
+        }
+        if (expensiveWine){
+            fetch('http://localhost:3000/wines',{
+                method: "POST",
+                headers: {
+                  'content-type': 'application/json'
+                },
+                body: JSON.stringify(wine)
+                })
+            .then(resp => resp.json())
+            .then(newWine => this.props.addWine(newWine))
+            this.setState({
+                winery: '',
+                varietal: '',
+                price: '',
+                rating: '',
+                review: ''
+            });
+        }
     }
 
     handleChange = (e) => {
